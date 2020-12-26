@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AspNetCoreHero.EntityFrameworkCore.Auditing.Models
+namespace AspNetCoreHero.EntityFrameworkCore.AuditTrail.Models
 {
     public class Audit
     {

@@ -1,17 +1,19 @@
-﻿using AspNetCoreHero.EntityFrameworkCore.Auditing.Models;
+﻿using AspNetCoreHero.EntityFrameworkCore.AuditTrail.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AspNetCoreHero.EntityFrameworkCore.Auditing
+namespace AspNetCoreHero.EntityFrameworkCore.AuditTrail
 {
     public abstract class AuditableContext : DbContext
     {
         public AuditableContext(DbContextOptions options) : base(options)
         {
         }
+
         public DbSet<Audit> AuditLogs { get; set; }
+
         public virtual async Task<int> SaveChangesAsync(string userId = null)
         {
             var auditEntries = OnBeforeSaveChanges(userId);
@@ -19,6 +21,7 @@ namespace AspNetCoreHero.EntityFrameworkCore.Auditing
             await OnAfterSaveChanges(auditEntries);
             return result;
         }
+
         private List<AuditEntry> OnBeforeSaveChanges(string userId)
         {
             ChangeTracker.DetectChanges();

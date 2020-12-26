@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreHero.EntityFrameworkCore.Auditing.Enums
+﻿namespace AspNetCoreHero.EntityFrameworkCore.AuditTrail.Enums
 {
     public enum AuditType
     {

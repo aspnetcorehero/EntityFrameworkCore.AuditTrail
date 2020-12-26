@@ -1,11 +1,11 @@
-﻿using AspNetCoreHero.EntityFrameworkCore.Auditing.Enums;
+﻿using AspNetCoreHero.EntityFrameworkCore.AuditTrail.Enums;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AspNetCoreHero.EntityFrameworkCore.Auditing.Models
+namespace AspNetCoreHero.EntityFrameworkCore.AuditTrail.Models
 {
     public class AuditEntry
     {
